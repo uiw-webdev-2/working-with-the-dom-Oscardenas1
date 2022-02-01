@@ -4,17 +4,29 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
  */
 
-import Backpack from "./Backpack.js";
+import Student from "./Student.js";
 
-const everydayPack = new Backpack(
+const newStudent = new Student(
+  //firstName, lastName, age, gpa, idNum, image
+  "Oscar",
+  "Cardenas",
+  23,
+  3.42,
+  1093846,
+  "student.jpg"
 );
 
+//Template literals
 const content = `
      <figure class="backpack__image">
-       <img src= alt="" />
+       <img src=${newStudent.image} alt="" />
      </figure>
-     <h1 class="backpack__name"></h1>
-     <ul class="backpack__features">
+     <h1 class="Student__name">${newStudent.firstName}</h1>
+     <ul class="Student__features">
+     <li>First Name: ${newStudent.lastName}</li>
+     <li>Last Name: ${newStudent.age}</li>
+     <li>GPA: ${newStudent.gpa}</li>
+     <li>id Number: ${newStudent.idNum}</li>
      </ul>
    </article>
  `;
